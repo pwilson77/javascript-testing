@@ -1,11 +1,13 @@
 "use strict";
 
-const capitalize = string => {
+var exports = (module.exports = {});
+
+exports.capitalize = string => {
   const capitalizedWord = string.charAt(0).toUpperCase() + string.slice(1);
   return capitalizedWord;
 };
 
-const reverseString = string => {
+exports.reverseString = string => {
   const reversedText = string
     .toLowerCase()
     .split("")
@@ -14,7 +16,7 @@ const reverseString = string => {
   return reversedText;
 };
 
-const calculator = (function() {
+exports.calculator = (function() {
   const add = (x, y) => {
     return x + y;
   };
@@ -26,5 +28,12 @@ const calculator = (function() {
   };
   const divide = (x, y) => {
     return x / y;
+  };
+
+  return {
+    add,
+    subtract,
+    multiply,
+    divide
   };
 })();
