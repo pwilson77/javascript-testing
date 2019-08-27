@@ -1,39 +1,36 @@
-"use strict";
-
-var exports = (module.exports = {});
-
-exports.capitalize = string => {
+const capitalize = (string) => {
   const capitalizedWord = string.charAt(0).toUpperCase() + string.slice(1);
   return capitalizedWord;
 };
 
-exports.reverseString = string => {
+const reverseString = (string) => {
   const reversedText = string
     .toLowerCase()
-    .split("")
+    .split('')
     .reverse()
-    .join("");
+    .join('');
   return reversedText;
 };
 
-exports.calculator = (function() {
-  const add = (x, y) => {
-    return x + y;
-  };
-  const subtract = (x, y) => {
-    return x - y;
-  };
-  const multiply = (x, y) => {
-    return x * y;
-  };
-  const divide = (x, y) => {
-    return x / y;
-  };
+const calculator = (() => {
+  const add = (x, y) => x + y;
+
+  const subtract = (x, y) => x - y;
+
+  const multiply = (x, y) => x * y;
+
+  const divide = (x, y) => x / y;
 
   return {
     add,
     subtract,
     multiply,
-    divide
+    divide,
   };
 })();
+
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+};

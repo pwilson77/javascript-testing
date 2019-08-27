@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/pwilson77/javascript-testing#readme",
   "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.2",
     "jest": "^24.9.0"
   }
 }

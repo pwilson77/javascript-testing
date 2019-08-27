@@ -1,8 +1,6 @@
-"use strict";
+const caesar = (() => {
+  const mod = (n, m) => ((n % m) + m) % m;
 
-var exports = (module.exports = {});
-
-exports.caesar = (function() {
   const shiftChar = (c, shift) => {
     let charCode = c.charCodeAt(0);
     if (charCode >= 97 && charCode <= 122) {
@@ -15,16 +13,14 @@ exports.caesar = (function() {
     return String.fromCharCode(charCode);
   };
 
-  const mod = (n, m) => {
-    return ((n % m) + m) % m;
-  };
-
   const cipher = (str, shift) => {
-    str = str.split("").map(char => shiftChar(char, shift));
-    return str.join("");
+    const strCipher = str.split('').map((char) => shiftChar(char, shift));
+    return strCipher.join('');
   };
 
   return {
-    cipher
+    cipher,
   };
 })();
+
+module.exports = caesar;
